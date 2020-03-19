@@ -16,7 +16,7 @@ random.shuffle(questions)
 
 # Provide a welcome message to introduce the player to the game.
 
-welcome_message = "Guess the State Capital"
+welcome_message = "Welcome to the Monty Python Trivia Quiz"
 
 # print(welcome_message)s
 
@@ -32,7 +32,7 @@ def play_game():
     total_correct = 0
     total_incorrect = 0
     for x in questions:
-        user_input = input(f"{x['question']}")
+        user_input = input(f"{x['question']}{x['options']}")
         if user_input == x['answer']:
             x['correct'] += 1
             total_correct += 1
