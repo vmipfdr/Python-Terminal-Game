@@ -32,17 +32,17 @@ correctly and incorrectly.
 #### Process
 
 1. I first built out the questions and the structure of the models in the questions.py file.
-1. Next I built out the database. To do this, inside your pipenv, run psql
+1. Next I built out the database. To do this, inside your pipenv, run `psql`
 
 - from there CREATE DATABASE questions;
-- <\q> to get out of psql
+- `\q` to get out of psql
 
-1. After creating the database, I run <python questions.py> to seed the db
+1. After creating the database, I run `python questions.py` to seed the db
 1. I go back to psql to check on my data by running the following:
 
-- \c questions
-- use <\d> to Lists all tables
-- <SELECT \* FROM card;> to see all my cards
-- <\q> to get out of psql
+- `\c questions`
+- use `\d` to Lists all tables
+- `SELECT \* FROM card;` to see all my cards
+- `\q` to get out of psql
 
 1.
