@@ -28,3 +28,8 @@ correctly and incorrectly.
 - `for` loop
 - `sorted()`
 - `random.shuffle()`
+
+#### Process
+
+1. PeeWee provides access to the database (like routes)
+1.
