@@ -64,3 +64,5 @@
 # app.run(debug=True, port=9000)
 
 
+SELECT *
+CREATE TABLE questions;

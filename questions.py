@@ -3,7 +3,7 @@
 from peewee import *
 
 db = PostgresqlDatabase('questions', user='postgres',
-                        password='', host='localhost', port=9000)
+                        password='', host='localhost', port=5432)
 
 
 class BaseModel(Model):
