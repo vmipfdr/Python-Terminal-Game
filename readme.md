@@ -2,17 +2,6 @@
 
 I built out a Monty Python Bash/Terminal Trivia game using python and sql. Check it out!
 
-## Requirements
-
-Your project should meet the following requirements:
-
-1. Run without errors
-1. Built in Python, use a SQL database with PeeWee models
-1. Include a README written in well formatted Markdown (_hint: look up a README
-   template_)
-1. Shows a good commit history with frequent commits. We're looking for lots of
-   small commits
-
 ### Flash cards
 
 - A user should be able to create new cards.
@@ -21,15 +10,14 @@ Your project should meet the following requirements:
 - For each card, they should be presented with the "front" and then asked for the "back".
 - Keep track of how many times a card has been answered correctly and incorrectly.
 
-### Potentially Useful Python Features
+### How to Play:
 
-- `print()`
-- `input()`
-- `for` loop
-- `sorted()`
-- `random.shuffle()`
+- Clone this repo
+- run `pipenv shell`
+- run `python script.py`
+- answer the questions!
 
-#### Process
+#### The Process I used
 
 1. I first built out the questions and the structure of the models in the questions.py file.
 1. Next I built out the database. To do this, inside your pipenv, run `psql`
@@ -46,4 +34,14 @@ Your project should meet the following requirements:
 - `SELECT * FROM card;` to see all my cards
 - `\q` to get out of psql
 
-1.
+1. Once I had my SQL database seeded with the flashcards, I built out the MVP game execution. This consisted of:
+
+- connecting to the database I created
+- randomizing the list of "cards"
+- creating a function that allows the user to see a flash card and answer
+- creating a scorecard & a counter to move to the next card
+- an if else statement that provides feedback for both correct or incorrect answers
+
+1. Next I focused on building out how many cards the user wants to play
+
+1. Finally I built out the ability for the user to build a new card

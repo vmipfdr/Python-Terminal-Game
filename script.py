@@ -40,6 +40,7 @@ def game(card):
         else:
             print(over_message)
     else:
+        print("\n\n\n")
         print(f"Wrong, the correct answer is {card[counter].back}")
         counter += 1
         # print(counter)
