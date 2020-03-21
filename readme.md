@@ -40,9 +40,10 @@ Your project should meet the following requirements:
 1. After creating the database, I run `python questions.py` to seed the db
 1. I go back to psql to check on my data by running the following:
 
+- `\l` to see a list of the databases
 - `\c questions`
 - use `\d` to Lists all tables
-- `SELECT \* FROM card;` to see all my cards
+- `SELECT * FROM card;` to see all my cards
 - `\q` to get out of psql
 
 1.
