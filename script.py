@@ -21,6 +21,10 @@ correct_message = "that's right!"
 over_message = "\nGame Over!\n"
 # print(welcome_message)
 
+# I wonder if we can have the student set the counter to reduce cards shown
+
+# have to create a new card, but don't let users do it
+
 
 def game(card):
     global counter
