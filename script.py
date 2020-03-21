@@ -1,51 +1,48 @@
-from questions import questions
+from peewee import *
+from questions import Card
 import random
 
-# - Your program should prompt the user to identify the capital associated with a
-# given state.
-# - There should be running tallies on the number of correct and incorrect answers
-# for each state
-# - After getting through all 50 states one time, users should be asked whether or
-# not they want to play again.
+db = PostgresqlDatabase(
+    "questions", user="postgres", password="", host="localhost", port=5432
+)
 
-# print(states)
-# Make sure the states don't appear in alphabetical order in the prompts.
-random.shuffle(questions)
 
-# print(states)
+card = list(Card.select())
 
-# Provide a welcome message to introduce the player to the game.
+random.shuffle(card)
+counter = 0
+
+# print(card)
+print(len(card))
 
 welcome_message = "Welcome to the Monty Python Trivia Quiz"
+correct_message = "that's right!"
 
-# print(welcome_message)s
-
-for i in questions:
-    i['correct'] = 0
-    i['incorrect'] = 0
-print(welcome_message)
-
-# print(len(states))
+# print(welcome_message)
 
 
-def play_game():
-    total_correct = 0
-    total_incorrect = 0
-    for x in questions:
-        user_input = input(f"{x['question']}{x['options']}")
-        if user_input == x['answer']:
-            x['correct'] += 1
-            total_correct += 1
-            print(
-                f'Correct. {total_correct} correct. {total_incorrect} incorrect.')
+def game(card):
+    global counter
+    print(welcome_message)
+    print(f"\n{card[counter].front}")
+    choice = input(" \nWhat's your answer \n")
+    print("\n\n\n")
+    if choice == card[counter].back:
+        counter += 1
+        print(correct_message)
+        # print(counter)
+        if counter < len(card):
+            return game(card)
         else:
-            x['incorrect'] += 1
-            total_incorrect += 1
-            print(
-                f'Wrong. {x["answer"]} is the answer. {total_correct} correct. {total_incorrect} incorrect.')
-    user_input = input('Another round?')
-    if user_input == 'yes':
-        play_game()
+            print("Game Over")
+    else:
+        print(f"Wrong, the correct answer is {card[counter].back}")
+        counter += 1
+        # print(counter)
+        if counter < len(card):
+            return game(card)
+        else:
+            print("Game Over")
 
 
-play_game()
+game(card)
