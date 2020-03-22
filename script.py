@@ -24,6 +24,7 @@ over_message = "\nGame Over!\n"
 # I wonder if we can have the student set the counter to reduce cards shown
 
 # have to create a new card, but don't let users do it
+# input(" enter 'game' or 'create' \n")
 
 
 def game(card):

@@ -15,7 +15,7 @@ I built out a Monty Python Bash/Terminal Trivia game using python and sql. Check
 - Clone this repo
 - run `pipenv shell`
 - run `python script.py`
-- answer the questions!
+- answer the questions!p
 
 #### The Process I used
 
